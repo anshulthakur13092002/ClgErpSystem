@@ -1,0 +1,16 @@
+package com.example.collegeerp.model;
+
+import lombok.*;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@Builder
+@ToString
+public class JwtResponse {
+    private String jwtToken;
+    private String username;
+
+    public JwtResponse() {
+    }
+}

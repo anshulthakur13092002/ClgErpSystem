@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Showcase</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyF1Pt0tv5hjOusakclDpXu2jM+g5v93U" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #04AA6D;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        #student-details {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        #student-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1, h3, p {
+            color: #343a40;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            display: inline;
+            margin-right: 20px;
+            color: #555;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+        button{
+            margin-left: 1590px;
+            margin-top: 20px;
+            background-color: #aa1204;
+            width: 140px;
+            height: 50px;
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1 style="color: #dddddd">Student Details</h1>
+
+</header>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8" id="student-details">
+
+            <h1 th:text="${details.firstName} + ${details.lastName}"></h1>
+            <h3>Email: <span th:text="${details.email}"></span></h3>
+            <h3>Course: <span th:text="${details.course.courseId}"></span></h3>
+        </div>
+
+    </div>
+    <table>
+        <tr>
+            <th>subName</th>
+            <th>Grade</th>
+
+        </tr>
+        <tr th:each="user:${details.subject}">
+            <td th:text="${user.subjectName}"></td>
+            <td th:text="${user.grade}"></td>
+
+
+
+
+        </tr>
+    </table>
+</div>
+
+<a  th:href="@{/logout}"> <button  class="ll" >Log Out</button></a>
+
+<!-- Bootstrap JS and Popper.js CDN (Optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"
+        integrity="sha384-zMP8rZIhMhtHM4ePJ8XtL3ho9W1T42SSwq5UJY49P95z9vGn7NvxA3yHblyl7T1Y"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyF1Pt0tv5hjOusakclDpXu2jM+g5v93U"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

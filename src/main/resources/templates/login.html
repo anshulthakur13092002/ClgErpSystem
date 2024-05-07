@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Informatics College</title>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="College, Pokhara, IT College, Lions Marga, college in pokhara, nepalIT">
+ <meta name="author" content="Bishworaj Poudel">
+ <link rel="stylesheet" type="text/css" href="static/css/style.css">
+<script src="static/javascript/js.js="></script>
+<script src="static/javascript/login.js"></script>
+	<style>
+		body{
+			background-image:url('static/images/214211.jpg');
+			background-size: cover;
+
+		}
+		button{
+			font-size: 16px;
+			background: linear-gradient(#ffbc00 5%, #ffdd7f 100%);
+			border: 1px solid #e5a900;
+			color: #4E4D4B;
+			font-weight: bold;
+			cursor: pointer;
+			width: 100%;
+			border-radius: 5px;
+			padding: 10px 0;
+			outline:none;
+		}
+		button:hover{
+			background: linear-gradient(#ffdd7f 5%, #ffbc00 100%);
+		}
+.foronly{
+	.container {
+		background-color: papayawhip;
+		border-radius: 30px/* Replace #ff0000 with the color code or name you want */
+	}
+
+}
+	</style>
+
+</head>
+<body class="body">
+<header class="mainheader">
+	<img src="static/images/logo.png">
+	<content id="search">
+		<form>
+  <input type="text" name="search" placeholder="Search anything..." onclick="window.location.href='search.html'">
+</form>
+	</content>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="course.html">Course</a></li>
+			<li><a href="download.html">Download</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="login.html">Login</a></li>
+			
+		</ul> 
+	</nav>
+</header>
+<div class="foronly">
+<div class="container">
+	  <div class="main">
+	  
+		<h3 style="color: black">User Login</h3><hr/>
+ 
+		<form  th:action="@{/doLogin}" id="form_id" method="post" name="myform" th:object="${jwtRequest}">
+		  <label>User Name :</label></br>
+		  <input type="text" name="username" id="username" th:field="*{email}"/></br>
+ 
+		   <label>Password :</label></br>
+		  <input type="password" name="password" id="password" th:field="*{password}" /></br>
+ 
+<!--		  <input type="button" value="Login" id="submit" />-->
+			<button type="submit" id="submit">Login</button>
+<!--			onclick="validate()"-->
+		</form>
+		<span><b class="note">Note : </b><strong>For this demo use following username and password. <br/><b class="valid"><h4>User Name : informatics<br/>Password : informatics123</b></h4></span></strong>
+	  </div>
+	 
+	   <div class="fugo">
+		 <a href="static/images/login_photo.jpg"><img src="static/images/login_photo.jpg" /></a>
+	  </div>
+	</div>
+</div>
+
+<footer class="mainFooter">
+	<p>Copyright &copy <a href="https://www.facebook.com/IamBRP">Bishworaj Poudel</a> </p>
+	<center>
+	<a href="https://www.facebook.com/IamBRP/">Facebook</a>
+	<a href="https://www.twitter.com/IamBRP/">Twitter</a>
+	<a href="https://www.youtube.com/IamBRP/">Youtube</a>
+	</center>
+</footer>
+
+<script type="text/javascript">
+  document.title="Login";
+</script>
+</body>
+</html>
